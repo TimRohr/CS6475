@@ -128,12 +128,14 @@ temp_rsplit_blue = Image.fromarray(rsplit_blue)
 #rsplit_cyan[:,:,2]*=0
 #temp_rsplit_cyan = Image.fromarray(rsplit_cyan)
 
-temp_lsplit_red.show()
-temp_rsplit_blue.show()
+#####temp_lsplit_red.show()
+#####temp_rsplit_blue.show()
 #temp_rsplit_cyan.show()
 
 total_image=lsplit_red+rsplit_blue
 
 total_image = Image.fromarray(total_image)
-total_image.show()
+######total_image.show()
+#cv2.imwrite("total_image.jpg", total_image)
+total_image.save("total_image.png","PNG")
            
