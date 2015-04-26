@@ -13,11 +13,11 @@ PIL_Version = Image.VERSION
 
 print PIL_Version
 
-urlL = raw_input("Enter Left Image url")
+urlL = raw_input("Enter Left Image url: ")
 responseL = requests.get(urlL)
 imL = Image.open(StringIO(responseL.content))
 
-urlR = raw_input("Enter Right Image url")
+urlR = raw_input("Enter Right Image url: ")
 responseR = requests.get(urlR)
 imR = Image.open(StringIO(responseR.content))
 
