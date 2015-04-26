@@ -2,49 +2,73 @@
 # Timothy Rohr and David Whiskochil
 # GTID's: 903137387 and 901293148
 
-
-# uses PIL from http://www.pythonware.com/
-# and numpy from http://www.scipy.org/
-
-from PIL import Image
-import numpy as np
 import cv2
+import numpy as np
+import scipy as sp
+from PIL import Image
+import requests
+from StringIO import StringIO
 
-_magic = [0.299, 0.587, 0.114]
-_zero = [0, 0, 0]
-_ident = [[1, 0, 0],
-[0, 1, 0],
-[0, 0, 1]]
+PIL_Version = Image.VERSION
 
-# anaglyph methods from here:
-# http://mitglied.lycos.de/stereo3d/an...comparison.htm
+print PIL_Version
 
-true_anaglyph = ([_magic, _zero, _zero], [_zero, _zero, _magic])
-gray_anaglyph = ([_magic, _zero, _zero], [_zero, _magic, _magic])
-color_anaglyph = ([_ident[0], _zero, _zero], [_zero, _ident[1], _ident[2]])
-half_color_anaglyph = ([_magic, _zero, _zero], [_zero, _ident[1], _ident[2]])
-optimized_anaglyph = ([[0, 0.7, 0.3], _zero, _zero], [_zero, _ident[1], _ident[2]])
-methods = [true_anaglyph, gray_anaglyph, color_anaglyph, half_color_anaglyph, optimized_anaglyph]
+urlL = raw_input("Enter Left Image url")
+responseL = requests.get(urlL)
+imL = Image.open(StringIO(responseL.content))
 
-def anaglyph(image1, image2, method=true_anaglyph):
-    m1, m2 = [np.array(m).transpose() for m in method]
-    im1, im2 = image_to_array(image1), image_to_array(image2)
-    composite = np.matrixmultiply(im1, m1) + np.matrixmultiply(im2, m2)
-    result = array_to_image(image1.mode, image1.size, composite)
-    return result
+urlR = raw_input("Enter Right Image url")
+responseR = requests.get(urlR)
+imR = Image.open(StringIO(responseR.content))
 
-def image_to_array(im):
-    s = im.tostring()
-    dim = len(im.getbands())
-    return np.fromstring(s, np.UnsignedInt8).reshape(len(s)/dim, dim)
+#imL = Image.open("left.JPG")
+#imR = Image.open("right.JPG")
 
-def array_to_image(mode, size, a):
-    return Image.fromstring(mode, size, a.reshape(len(a)*len(mode), 1).astype(numpy.UnsignedInt8).tostring())
 
-#if __name__=='__main__':
-#    im1, im2 = Image.open("left-eye.jpg"), Image.open("right-eye.jpg")
+#imL.show()
+print "IML Size=", imL.size
 
-im1 = cv2.imread('left.jpg',0)
-im2 = cv2.imread('right.jpg',0)
+#imR.show()
+print "IMR Size=", imR.size
 
-anaglyph(im1, im2, half_color_anaglyph).save('output.jpg', quality=98)
+if imL.size < imR.size:
+    print "IML is smaller"
+    imR=imR.resize(imL.size)
+    print "resizing"
+    
+elif imL.size > imR.size:
+    print "IMR is smaller"
+    imL=imL.resize(imR.size)
+    print "resizing"
+    
+else:
+    print "they are equal."
+
+print "IML Size=", imL.size
+print "IMR Size=", imR.size
+
+lsplit_red = np.array(imL)
+lsplit_red[:,:,1]*=0
+lsplit_red[:,:,2]*=0
+temp_lsplit_red = Image.fromarray(lsplit_red)
+
+rsplit_blue = np.array(imR)
+rsplit_blue[:,:,0]*=0
+rsplit_blue[:,:,1]*=0
+temp_rsplit_blue = Image.fromarray(rsplit_blue)
+
+#rsplit_cyan = np.array(imR)
+#rsplit_cyan[:,:,2]*=0
+#temp_rsplit_cyan = Image.fromarray(rsplit_cyan)
+
+#####temp_lsplit_red.show()
+#####temp_rsplit_blue.show()
+#temp_rsplit_cyan.show()
+
+total_image=lsplit_red+rsplit_blue
+
+total_image = Image.fromarray(total_image)
+######total_image.show()
+#cv2.imwrite("total_image.jpg", total_image)
+total_image.save("total_image.png","PNG")
+           
