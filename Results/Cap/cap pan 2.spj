@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stitchProject version="2.0" cameraMotion="automatic" computedCameraMotion="homography" projection="perspective">
+  <vignetteCorrection redFactor="0" greenFactor="0" blueFactor="0" globalIntensityScale="1" />
+  <sourceImages>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap04.jpg">
+      <radialDistortion k1="-0.0368406177" k2="0.02096759" k3="0.00699427631" k4="0" />
+      <cameraPose matrix="0.95700290542443023,-0.070134034610011775,0.025479469451467764,0.064525202124020437,0.98504173880292389,0.042306213166815473,-0.69853821685086981,0.0015149088291179086,1.029696178702673" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap05.jpg">
+      <radialDistortion k1="-0.0368406177" k2="0.02096759" k3="0.00699427631" k4="0" />
+      <cameraPose matrix="1,1.3444106938820255E-17,0,6.9388939039072284E-18,1,1.7347234759768071E-18,0,-6.9388939039072284E-18,0.99999999999999989" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap06.jpg">
+      <radialDistortion k1="-0.0368406177" k2="0.02096759" k3="0.00699427631" k4="0" />
+      <cameraPose matrix="0.94854487795038567,-0.064575955134943838,-0.041185174784055471,0.061076927279021948,0.96608002519273084,0.010706026387360408,0.66999660044974663,-0.030956401690588338,0.97111098552831432" tolerance="4" />
+    </sourceImage>
+  </sourceImages>
+</stitchProject>

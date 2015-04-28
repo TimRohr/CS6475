@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stitchProject version="2.0" cameraMotion="automatic" computedCameraMotion="homography" projection="perspective">
+  <vignetteCorrection redFactor="0" greenFactor="0" blueFactor="0" globalIntensityScale="1" />
+  <sourceImages>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\Linc_ext\linc_05a.jpg">
+      <cameraPose matrix="0.99999999999999989,2.4936649967166602E-18,0,6.9388939039072284E-18,1,0,1.1102230246251565E-16,6.9388939039072284E-18,1.0000000000000002" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\Linc_ext\linc_06.jpg">
+      <cameraPose matrix="0.98591799163515792,-0.034222198577266563,0.02212782291847042,0.040126494156387492,0.99562163933723524,0.027012368736584996,0.9322240307203471,0.032555351156646643,1.0226228118482235" tolerance="4" />
+    </sourceImage>
+  </sourceImages>
+</stitchProject>

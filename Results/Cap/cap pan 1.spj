@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stitchProject version="2.0" cameraMotion="automatic" computedCameraMotion="homography" projection="perspective">
+  <viewRotation roll="1.605829762876839" angleUnit="degrees" />
+  <vignetteCorrection redFactor="0" greenFactor="0" blueFactor="0" globalIntensityScale="1" />
+  <sourceImages>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap01.jpg">
+      <cameraPose matrix="0.98594204995042445,-0.034522133834904815,0.022545714713895635,0.031331102249711751,1.01492213377952,0.10031626491531401,-0.65126158250287314,0.0740150865935719,1.018041875391354" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap02.jpg">
+      <cameraPose matrix="1.0000000000000002,-5.6649563512367607E-18,0,1.3877787807814457E-17,1.0000000000000002,6.9388939039072284E-18,-1.1102230246251565E-16,8.6736173798840355E-18,0.99999999999999989" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\cap\cap03.jpg">
+      <cameraPose matrix="0.98369599770550031,-0.054355112123935588,-0.024902206899560162,0.07589593975204631,1.009040503403964,0.039515751562092132,0.74162701707581968,0.0055654346959288937,0.98312924267760116" tolerance="4" />
+    </sourceImage>
+  </sourceImages>
+</stitchProject>
