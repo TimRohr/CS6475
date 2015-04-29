@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stitchProject version="2.0" cameraMotion="automatic" computedCameraMotion="rotation3D" projection="cylindrical">
+  <viewRotation yaw="8.9916215758285158" pitch="-6.54656995517821" roll="2.843112825033419" angleUnit="degrees" />
+  <vignetteCorrection redFactor="0" greenFactor="0" blueFactor="0" globalIntensityScale="1" />
+  <sourceImages>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\four.jpg">
+      <cameraPose yaw="23.672128391410343" pitch="9.02669934839212" roll="0.72541435927594267" angleUnit="degrees" focalLength="1.0106798696725656" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\three.jpg">
+      <cameraPose yaw="5.3938427515836018" pitch="4.0701520694780671" roll="-1.0773977095942842" angleUnit="degrees" focalLength="1.0106798696725656" tolerance="4" />
+    </sourceImage>
+    <sourceImage filePath="C:\Users\Dave\Documents\GitHub\CS6475\Results\two.jpg">
+      <cameraPose yaw="-29.360907048452571" pitch="0.45015454196201188" roll="0.47379084215415612" angleUnit="degrees" focalLength="1.0106798696725656" tolerance="4" />
+    </sourceImage>
+  </sourceImages>
+</stitchProject>
